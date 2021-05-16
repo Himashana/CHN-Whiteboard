@@ -1,0 +1,97 @@
+﻿
+<!DOCTYPE html>
+
+
+<html>
+<head>
+
+
+    <title>CHN Classroom - Whiteboard</title>
+
+    <link rel="stylesheet" href="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .Toolbox {
+            background-color: #ddd;
+            position: fixed;
+            border: 5px solid black;
+            width: 50%;
+            padding: 5px;
+            height: 70px;
+        }
+
+        .Toolbox2 {
+            background-color: #ddd;
+            position: fixed;
+            border: 5px solid black;
+            width: 10%;
+            padding: 5px;
+            height: 100%;
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+<body role="document">
+    <div id="update"><h3>New version available!<a href="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html"><button>Update now</button></a></h3><br />This version will stop working after few days.</div>
+    <div id="header"><h3>CHN Classroom - Whiteboard V 1.0.0</h3></div>
+    <div class="Toolbox2">
+        <br /><br /><br /><br /><br />
+        <button onclick="Green();"><i class="fa fa-pencil" style="font-size:48px;color:green"></i></button><br /><br />
+        <button onclick="Yellow();"><i class="fa fa-pencil" style="font-size:48px;color:yellow"></i></button><br /><br />
+        <button onclick="Red();"><i class="fa fa-pencil" style="font-size:48px;color:red"></i></button><br /><br />
+        <button onclick="Blue();"><i class="fa fa-pencil" style="font-size:48px;color:blue"></i></button><br /><br /><hr />
+        <button onclick="Size1();"><p style="font-size:48px;color:blue">01</p></button><br /><br />
+        <button onclick="Size2();"><p style="font-size:48px;color:blue">05</p></button><br /><br />
+        <button onclick="Size3();"><p style="font-size:48px;color:blue">10</p></button><br /><br /><hr />
+    </div>
+
+
+    <div class="Toolbox">
+        <button onclick="Write();"><i class="fa fa-pencil" style="font-size:48px;color:black"></i></button>
+        <button onclick="Erase();"><i class="fa fa-eraser" style="font-size:48px;color:black"></i></button>
+
+    </div>
+
+
+
+    <canvas id="canvas"></canvas>
+    <script src="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Function.js"></script>
+    <script>
+        //document.refresh('https://chnsoftwaredevelopers.com/classroom/Whiteboard/WhiteboardApp/Style.css');
+        let links = document.getElementsByTagName('link');
+        for (let i = 0; i < links.length; i++) {
+            if (links[i].getAttribute('rel') == 'stylesheet') {
+                let href = links[i].getAttribute('href')
+                    .split('?')[0];
+
+                let newHref = href + '?version='
+                    + new Date().getMilliseconds();
+
+                links[i].setAttribute('href', newHref);
+            }
+        } 
+    </script>
+
+
+
+
+
+
+
+    <center>
+        <a href="https://chnsoftwaredevelopers.com">
+            <p>copyright &#169; CHN software developers </p>
+        </a>
+    </center>
+
+
+</body>
+</html>
