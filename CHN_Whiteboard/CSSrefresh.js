@@ -1,3 +1,4 @@
+//Refresh all connections with other files.
 //document.refresh('https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Style.css');
         let links = document.getElementsByTagName('link');
         for (let i = 0; i < links.length; i++) {
