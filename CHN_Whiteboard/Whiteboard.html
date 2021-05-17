@@ -64,22 +64,9 @@
 
     <canvas id="canvas"></canvas>
     <script src="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Function.js"></script>
-    <script>
-        //document.refresh('https://chnsoftwaredevelopers.com/classroom/Whiteboard/WhiteboardApp/Style.css');
-        let links = document.getElementsByTagName('link');
-        for (let i = 0; i < links.length; i++) {
-            if (links[i].getAttribute('rel') == 'stylesheet') {
-                let href = links[i].getAttribute('href')
-                    .split('?')[0];
-
-                let newHref = href + '?version='
-                    + new Date().getMilliseconds();
-
-                links[i].setAttribute('href', newHref);
-            }
-        } 
-    </script>
-
+    
+    //Refresh the external links.
+    <script src="CSSrefresh.js"></script>
 
 
 
