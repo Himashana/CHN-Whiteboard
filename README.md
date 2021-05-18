@@ -4,4 +4,5 @@ CHN Software Developers product
 
 You must need an internet connection to work with CHN Whiteboard.
 
-Get last updates : https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html
+
+Get last updates : [_https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html_](https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard%20App/Update.html)
