@@ -7,3 +7,14 @@ You must need an internet connection to work with CHN Whiteboard.
 
 Get last updates : [_https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html_](https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard%20App/Update.html)
 
+## Files
+
+```text
+CHN-Whiteboard-x.x.x/
+├── CHN_Whiteboard/
+│   ├── CSSrefresh.js
+│   ├── Update.js
+│   ├── Whiteboard.html
+└── README.md
+    
+```
