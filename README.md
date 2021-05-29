@@ -12,10 +12,16 @@ Get last updates : [_https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whit
 
 ```text
 CHN-Whiteboard-x.x.x/
+├── .github/
+│   ├── workflows/
+│       ├── codeql-analysis.yml
+│       ├── main.yml
 ├── CHN_Whiteboard/
 │   ├── CSSrefresh.js
 │   ├── Update.js
 │   ├── Whiteboard.html
-└── README.md
+├── README.md
+├── SECURITY.md
+└── package.json
     
 ```
