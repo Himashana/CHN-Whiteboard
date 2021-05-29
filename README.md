@@ -1,4 +1,5 @@
-# CHN-Whiteboard <a href="https://github.com/Himashana/CHN-Whiteboard/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Himashana/CHN-Whiteboard"></a>
+# CHN-Whiteboard <a href="https://github.com/Himashana/CHN-Whiteboard/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Himashana/CHN-Whiteboard">&nbsp;</a><a href="https://github.com/Himashana/CHN-Whiteboard/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Himashana/CHN-Whiteboard"></a>
+
 
 CHN Software Developers product
 
