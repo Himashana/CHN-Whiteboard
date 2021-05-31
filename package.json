@@ -1,4 +1,7 @@
 {
     "Name" : "CHN-Whiteboard",
-    "version" : "v1.0.0"
+    "version" : "v1.2.0",
+    "Description" : ""
+    "homepage": "https://chnsoftwaredevelopers.com/",
+    "author": "Himashana",
 }
