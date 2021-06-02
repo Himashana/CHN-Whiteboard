@@ -38,3 +38,4 @@ while x == 0 :
         break;
     else :
         print("Error occured : Undefined")
+    else:
