@@ -16,10 +16,19 @@ CHN-Whiteboard-x.x.x/
 │   ├── workflows/
 │       ├── codeql-analysis.yml
 │       ├── main.yml
+│       ├── npm-publish.yml
+│       ├── python-package.yml
 ├── CHN_Whiteboard/
+│   ├── assets/
+│       ├── Screenshot 2021-05-30 151305.png
+│       ├── assets.txt
 │   ├── CSSrefresh.js
 │   ├── Update.js
 │   ├── Whiteboard.html
+│   ├── execute.py
+│   ├── run.js
+│   ├── service.js
+│   ├── stoped.html
 ├── README.md
 ├── SECURITY.md
 └── package.json
