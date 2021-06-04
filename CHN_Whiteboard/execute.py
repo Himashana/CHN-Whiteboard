@@ -27,6 +27,10 @@ while x == 0 :
         print("Started succesfully")
         print("Updates - 0%")
         print("Application is running in your browser")
+
+        print("_______________________________________________________________")
+        print("Enter 'stop()' to stop 'service.js' javascript")
+        print("_______________________________________________________________")
         
         while y == 0 :
             stop = input("")
@@ -52,8 +56,10 @@ while x == 0 :
             i.write('CHN_Whiteboard - v1.2.0')
             i.close()       
             print("Created info.txt")
+            print("_______________________________________________________________")
             print("Setup successfully")
             setup_compleate = input("")
+            break;
         else:
             f.truncate(0)
             f.write('location.replace("stoped.html");')
