@@ -1,8 +1,18 @@
+from tqdm import tqdm
+import requests
 import webbrowser
 f = open("service.js", "a")
 i = open("info.txt", "a")
 x = 0
 y = 0
+
+chunk_size = 1024
+
+url = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.py"
+
+r = requests.get(url, stream = True)
+
+
 print("_______________________________________________________________")
 print("")
 print("        _______      _        _       _       _")
@@ -13,6 +23,17 @@ print("    /_______/    /_/      /_/     /_/    \ _/")
 print("             CHN Software Developers")
 print("_______________________________________________________________")
 print("")
+update = input("Required to download 'update.py' updates(recommended). If you continue, this will automatically download updates(Make sure you have an active internet connection). ")
+print("_______________________________________________________________")
+
+total = int(r.headers['content-length'])
+with open("Update.py", 'wb') as d:
+    for data in tqdm(iterable = r.iter_content(chunk_size = chunk_size), total = total/chunk_size, unit='KB'):
+        d.write(data)
+print("Updated successfully!")
+print("_______________________________________________________________")
+
+
 while x == 0 :
     open = input("Do you want to start 'service.js' javascript(y/n)? ")
     if open == "y" or open == "Y" :
@@ -20,12 +41,10 @@ while x == 0 :
         f.truncate(0)
         f.write('')
         
-
-        webbrowser.open("https://chnsoftwaredevelopers.com/")
+        #webbrowser.open("https://chnsoftwaredevelopers.com/")
         webbrowser.open("Whiteboard.html")
         
         print("Started succesfully")
-        print("Updates - 0%")
         print("Application is running in your browser")
 
         print("_______________________________________________________________")
