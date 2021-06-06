@@ -66,3 +66,8 @@ CHN-Whiteboard-x.x.x/
    ```text
    py -m pip install PyQt5
    ```   
+   
+5. PyQtWebEngine
+   ```text
+   py -m pip install PyQtWebEngine
+   ```     
