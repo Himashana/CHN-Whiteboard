@@ -50,4 +50,19 @@ CHN-Whiteboard-x.x.x/
 | 1.0.1   | May 21, 2021           | Jun 30, 2021           | :white_check_mark: |
 | 1.0.0   | May 16, 2021           | Jun 10, 2021           | :white_check_mark: |
 
+## Prerequisites
 
+1. Python latest version
+
+2. tqdm
+   ```text
+   py -m pip install tqdm
+   ```
+3. requests
+   ```text
+   py -m pip install requests
+   ```
+4. PyQt5
+   ```text
+   py -m pip install PyQt5
+   ```   
