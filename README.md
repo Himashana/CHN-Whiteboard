@@ -29,8 +29,8 @@ CHN-Whiteboard-x.x.x/
 │       ├── python-package.yml
 ├── CHN_Whiteboard/
 │   ├── assets/
-│       ├── Screenshot 2021-05-30 151305.png
-│       ├── assets.txt
+│   |   ├── Screenshot 2021-05-30 151305.png
+│   |   ├── assets.txt
 │   ├── CSSrefresh.js
 │   ├── Update.js
 │   ├── Whiteboard.html
