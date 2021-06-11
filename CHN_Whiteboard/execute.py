@@ -1,6 +1,9 @@
 from tqdm import tqdm
 import requests
 import webbrowser
+import time
+
+
 f = open("service.js", "a")
 i = open("info.txt", "a")
 x = 0
@@ -24,6 +27,13 @@ print("             CHN Software Developers")
 print("_______________________________________________________________")
 print("")
 update = input("Required to download 'update.py' updates(recommended). If you continue, this will automatically download updates(Make sure you have an active internet connection). ")
+print("_______________________________________________________________")
+for i in tqdm (range (241),
+			desc="Preparing files...",
+			ascii=False, ncols=75):
+	time.sleep(0.01)
+	
+print("Ready to download updates.")
 print("_______________________________________________________________")
 
 total = int(r.headers['content-length'])
