@@ -48,7 +48,7 @@ CHN-Whiteboard-x.x.x/
 | Version | Released date          | End-of-service         | Supported          |
 | ------- | ---------------------- | ---------------------- | ------------------ |
 | 1.0.1   | May 21, 2021           | Jun 30, 2021           | :white_check_mark: |
-| 1.0.0   | May 16, 2021           | Jun 10, 2021           | :white_check_mark: |
+| 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |
 
 ## Prerequisites
 
