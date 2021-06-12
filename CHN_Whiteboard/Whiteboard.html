@@ -73,7 +73,8 @@
     <div class="Toolbox">
         <button onclick="Write();"><i class="fa fa-pencil" style="font-size:48px;color:black"></i></button>
         <button onclick="Erase();"><i class="fa fa-eraser" style="font-size:48px;color:black"></i></button>
-        <button onclick="location.reload();"><i class="fa fa-refresh" style="font-size:48px;color:black"></i></button>
+        <button onclick="Grid();" id="Grid-btn"><i class="fa fa-toggle-on" style="font-size:48px;color:black"></i></button>
+        <button onclick="Reload();" id="Reload-btn"><i class="fa fa-refresh" style="font-size:48px;color:black"></i></button>
     </div>
 
 
@@ -101,7 +102,29 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
     <script src="Update.js"></script>
     <script type="text/javascript" src="run.js"></script>
     <script src="service.js"></script>
-   
+    <script>
+        var grid = document.getElementById("canvas");
+        var show = "True";
+        function Grid(){
+            if(show == "True"){
+                grid.style.backgroundImage = "url('')";
+                show = "False";
+                document.getElementById("Grid-btn").innerHTML = "<i class='fa fa-toggle-off' style='font-size:48px;color:black'></i>";
+            }else{
+                grid.style.backgroundImage = "url('https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.2.0/CHN_Whiteboard/assets/Screenshot%202021-05-30%20151305.png')";
+                show = "True";
+                document.getElementById("Grid-btn").innerHTML = "<i class='fa fa-toggle-on' style='font-size:48px;color:black'></i>";
+            }
+            
+        }
+        
+        function Reload(){
+            //document.getElementById("Reload-btn").disabled = true;
+            document.getElementById("Reload-btn").style.backgroundColor = "Yellow";
+            location.reload();
+            
+        }
+    </script>
     
         
 
