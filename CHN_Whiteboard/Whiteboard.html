@@ -43,6 +43,9 @@
             padding: 5px;
             height: 100px;
         }
+        .canvas_setup{
+            display:none;
+        }
         
     </style>
 
@@ -79,11 +82,13 @@
 
 
     <div class="Toolbox3">
+        <p id="canvas_setup_txt">canvas_setup not installed. To install it run execute.py and type 'canvas_setup --install'(<a href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/index.php?page=canvas_setup">More info!</a>).</p>
+        <div class="canvas_setup" id="canvas_setup">
         <textarea id="html" placeholder="HTML" style="height:80px; width:40%; background-color:black; color:white;"><canvas id="myCanvas" width="2000" height="2000">
 Your browser does not support the HTML canvas tag.</canvas></textarea>
         <textarea id="css" placeholder="CSS" style="height:80px; width:15%; background-color:black; color:white;"></textarea>
         <textarea id="js" placeholder="JavaScript" style="height:80px; width:44%; background-color:black; color:white;"></textarea>
-        
+        </div>
 
     </div>
    
@@ -102,6 +107,7 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
     <script src="Update.js"></script>
     <script type="text/javascript" src="run.js"></script>
     <script src="service.js"></script>
+    <script src="canvas_setup.js"></script>
     <script>
         var grid = document.getElementById("canvas");
         var show = "True";
