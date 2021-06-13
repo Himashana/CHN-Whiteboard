@@ -9,7 +9,7 @@ i = open("info.txt", "a")
 x = 0
 y = 0
 
-chunk_size = 1024
+chunk_size = 1
 
 url = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.py"
 
