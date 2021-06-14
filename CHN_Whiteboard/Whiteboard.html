@@ -134,7 +134,17 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
         }
     </script>
     
+      <script>
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
         
+            if (e) {
+                e.returnValue = 'Sure?';
+            }
+        
+            return 'Sure?';
+        };
+</script>  
 
 
 
