@@ -19,6 +19,8 @@ Get last updates : [_https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whit
 
 CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/](https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/)
 
+You also can use CHN Whiteboard [web version..](https://chnsoftwaredevelopers.com/Loading.html)
+
 ## Files
 
 ```text
