@@ -215,7 +215,7 @@
   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 55%"></div>
 </div>';
         echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
-        echo'<br><p>5. Then it ask Do you want to start "service.js" javascript(y/n)?. Now type y and click enter.</p> Now you can see CHN Whiteboard opening in your web browser.<br><br>';
+        echo'<br><p>5. Then it ask Do you want to start "service.js" javascript(y/n)?. Now type y and click enter.</p> Now you can see CHN Whiteboard opening in your web browser.<br><br>You can type stop() and click enter to stop CHN Whiteboard.<br><br>';
         echo'<a class="btn btn-lg btn-primary" href="index.php?page=12" role="button">Next &raquo;</a>';
         echo'</div>';
         echo'</main>';
@@ -230,11 +230,30 @@
         echo'<div class="bg-light p-5 rounded mt-3">';
         echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
                 echo'<div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
 </div>';
         echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
         echo'<br><h4 style="color:green;">You done it...!</h4><br>';
-        echo'<a class="btn btn-lg btn-primary" href="index.php?page=13" role="button">How I stop CHN Whiteboard?</a>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=13" role="button">Finish !</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "13"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br><h4 style="color:green;">CHN Whiteboard installation ready to close...!</h4><br>';
+        //echo'<a class="btn btn-lg btn-primary" href="index.php?page=13" role="button">Finish !</a>';
+        echo'<button class="btn btn-lg btn-primary" onclick="close_win()" id="c_btn">Close installation !</button>';
         echo'</div>';
         echo'</main>';
         
@@ -242,6 +261,8 @@
         
     }
    ?>
+   
+   
 <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">CHN Whiteboard - CHN Software developers</a>
@@ -264,7 +285,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
+    <script>
+        function close_win(){
+             document.getElementById("c_btn").innerHTML = "Closing installation...";
+             location.replace("https://chnsoftwaredevelopers.com/");
+        } 
+    </script>
+    
 </body>
 </html>
                             
