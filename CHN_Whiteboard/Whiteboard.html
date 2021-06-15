@@ -93,7 +93,7 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
 
     </div>
    
-    <div id="re-loading" style="background-color:black; width:100%; height:100%; color:white; position:fixed; display:none;">Reloading CHN Whiteboard...<br>Cleaning data...</div>
+    <div id="re-loading" style="background-color:black; width:100%; height:100%; color:white; position:fixed; display:none;">Reloading CHN Whiteboard...<br>Cleaning data...<br><button onclick="reload_cancel();">Cancel</button></div>
     
     <canvas id="canvas"></canvas>
     
@@ -131,6 +131,9 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
             document.getElementById("re-loading").style.display = "Block";
             location.reload();
             
+        }
+        function reload_cancel(){
+            document.getElementById("re-loading").style.display = "none";
         }
     </script>
     
