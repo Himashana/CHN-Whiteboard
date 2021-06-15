@@ -92,7 +92,7 @@
 </div>';
         echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
         echo'<br><h4>Install Prerequisites</h4>Open cmd and install these things one by one.<br>1. tqdm : <p class="copy">py -m pip install tqdm</p><br>';
-        echo'<img src="img/img-1.png" style="width:70%; height:55%;"><br><p style="color:green;">Paste command and click enter.<br>If it is not working remove py -m and try.</p>';
+        echo'<img src="img/img-1.png" style="width:70%; height:55%;"><br><p style="color:green;">Paste command and click enter.<br>If it is not working remove py -m and try.<br>If not, you can contact me : himashana@chnsoftwaredevelopers.com</p>';
         echo'<br>2. requests : <p class="copy">py -m pip install requests</p><br>';
         echo'3. PyQt5 : <p class="copy">py -m pip install PyQt5</p><br>';
         echo'4. PyQtWebEngine : <p class="copy">py -m pip install PyQtWebEngine</p>';
@@ -106,7 +106,7 @@
         echo'<div class="bg-light p-5 rounded mt-3">';
         echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
                 echo'<div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
 </div>';
         echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
         echo'<br><h4>Ohoo...Now you ready to install CHN Whiteboard.';
@@ -122,11 +122,119 @@
         echo'<div class="bg-light p-5 rounded mt-3">';
         echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
                 echo'<div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 15%"></div>
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
 </div>';
         echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
         echo'<br><a href="https://github.com/Himashana/CHN-Whiteboard/releases/" target="_blank">Download CHN "CHN-Whiteboard-1.2.0-setup.exe" from github</a><br><br>';
         echo'<a class="btn btn-lg btn-primary" href="index.php?page=7" role="button">Next &raquo;</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "7"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 35%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br>Run the intallation file and click install. After the installation, it ask you to login to your CHN Account. If you do not have a CHN Account <a href="https://chnsoftwaredevelopers.com/Register/Register.html" target="_blank">Create it from here.</a>. <br><br>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=8" role="button">Next &raquo;</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "8"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br><h4 style="color:green;">Congratulations!...You done it. Now you ready to launch CHN Whiteboard.</h4><br>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=9" role="button">Next &raquo;</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "9"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 45%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br><p>1. Now search cmd (Command Prompt) in the Start menu and right click on it. Then click run as administrator.<br><br>2. Click yes.</p><br>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=10" role="button">Next &raquo;</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "10"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br><p>3. Now we going to start execute.py python file. To open it in the cmd type <div class="copy">cd C:\Program Files (x86)\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard</div> and click enter. if it is not working, type <div class="copy">cd C:\Program Files\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard</div> and try.<br><br>4. Then type execute.py and click enter. This may take some times to start. Make sure you have an active internet connection during this process.</p><br>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=11" role="button">Next &raquo;</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "11"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 55%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br><p>5. Then it ask Do you want to start "service.js" javascript(y/n)?. Now type y and click enter.</p> Now you can see CHN Whiteboard opening in your web browser.<br><br>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=12" role="button">Next &raquo;</a>';
+        echo'</div>';
+        echo'</main>';
+        
+        
+        
+    }elseif($page == "12"){
+        
+        
+        
+        echo'<main class="container">';
+        echo'<div class="bg-light p-5 rounded mt-3">';
+        echo'<h1>CHN Whiteboard installation - v1.2.0</h1>';
+                echo'<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 70%"></div>
+</div>';
+        echo'<p class="lead">This document will guide you to install CHN Whiteboard on your computer</p>';
+        echo'<br><h4 style="color:green;">You done it...!</h4><br>';
+        echo'<a class="btn btn-lg btn-primary" href="index.php?page=13" role="button">How I stop CHN Whiteboard?</a>';
         echo'</div>';
         echo'</main>';
         
