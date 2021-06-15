@@ -17,6 +17,8 @@ You must need an internet connection to work with CHN Whiteboard.
 
 Get last updates : [_https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html_](https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard%20App/Update.html)
 
+CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/](https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/)
+
 ## Files
 
 ```text
