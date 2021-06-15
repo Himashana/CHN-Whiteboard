@@ -43,6 +43,18 @@ with open("Update.py", 'wb') as d:
 print("Updated successfully!")
 print("_______________________________________________________________")
 
+c_f_url = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.php?v=1.2.0"
+r = requests.get(c_f_url)
+data = r.text
+print("")
+print(r.text)
+print("")
+
+if(r.text == "You are up to date!"):
+    x = 0
+else:
+    x = 1
+    execute_update = input("")
 
 while x == 0 :
     open = input("Do you want to start 'service.js' javascript(y/n)? ")
