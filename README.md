@@ -76,3 +76,15 @@ CHN-Whiteboard-x.x.x/
    py -m pip install PyQtWebEngine
    ```     
 See CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/](https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/)
+
+
+# Execute CHN Whiteboard from command prompt
+
+  ```text
+  cd C:\Program Files (x86)\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard
+   ``` 
+   
+   ```text
+   cd C:\Program Files\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard
+   ``` 
+
