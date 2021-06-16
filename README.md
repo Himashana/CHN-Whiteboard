@@ -49,10 +49,11 @@ CHN-Whiteboard-x.x.x/
 ```
 ## Released versions
 
-| Version | Released date          | End-of-service         | Supported          |
-| ------- | ---------------------- | ---------------------- | ------------------ |
-| 1.0.1   | May 21, 2021           | Jun 30, 2021           | :white_check_mark: |
-| 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |
+| Version | Released date          | End-of-service         | Supported          | Download           |
+| ------- | ---------------------- | ---------------------- | ------------------ | ------------------ |
+| 1.2.0   | Jun 16, 2021           | July 31, 2021           | :white_check_mark: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.2.0 |
+| 1.0.1   | May 21, 2021           | Jun 30, 2021           | :white_check_mark: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.0.1 |
+| 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |Link not found!|
 
 ## Prerequisites
 
