@@ -8,7 +8,7 @@
 
     <title>CHN Classroom - Whiteboard</title>
 
-    <link rel="stylesheet" href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.2.0/Style.css">
+    <link rel="stylesheet" href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/Dev-x.x.x/Style.css">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -57,8 +57,9 @@
 </head>
 <body role="document">
     
-    <div id="header"><h3>CHN Classroom - Whiteboard V 1.2.0</h3></div>
+    <div id="header"><h3>CHN Classroom - Whiteboard V x.x.x [development version]</h3></div>
     <iframe id="code" style="background:none transparent; position:fixed; left:10%; top:90px; width:40%; height:20px; resize:both; border:1px solid black;"></iframe>
+    <div id="shape_box" style="background-color:red; display:none; position:fixed; left:10%; top:90px; width:10px; height:4px; resize:both; border:1px solid black;"></div>
     <div class="Toolbox2">
         <br /><br /><br /><br /><br />
         <button onclick="Green();"><i class="fa fa-pencil" style="font-size:48px;color:green"></i></button><br /><br />
@@ -70,7 +71,12 @@
         <button onclick="Size3();"><p style="font-size:48px;color:blue">10</p></button><br /><br /><hr />
     </div>
     
-    
+    <div class="Toolbox" style="right:0%; width:10%; height:50%;">
+        <p>Shapes</p><hr>
+        <button onclick="Pendraw();" id="Reload-btn"><i class="fa fa-pencil" style="font-size:30px;color:black"></i></button>
+        <button onclick="Linedraw();" id="Reload-btn"><i class="fa fa-minus" style="font-size:30px;color:black"></i></button>
+        <button onclick="Squaredraw();" id="Reload-btn"><i class="	fa fa-object-ungroup" style="font-size:30px;color:black"></i></button>
+    </div>
     
 
     <div class="Toolbox">
@@ -101,7 +107,7 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
     <div id="update"><h3>New version available!&nbsp;<a href="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html"><button>Update now</button></a>&nbsp;<button onclick="cancel_update();">Cancel update</button></h3><br /><p id="Update_txt">This version will stop working after few days.</p></div>
     
     
-    <script src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.2.0/Function.js"></script>
+    <script src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/Dev-x.x.x/Function.js"></script>
     
     <!--Refresh the external links.-->
     <script src="CSSrefresh.js"></script>
