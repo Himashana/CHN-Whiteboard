@@ -1,5 +1,6 @@
 
-# CHN-Whiteboard <a href="https://github.com/Himashana/CHN-Whiteboard/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Himashana/CHN-Whiteboard">&nbsp;</a><a href="https://github.com/Himashana/CHN-Whiteboard/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Himashana/CHN-Whiteboard"></a>&nbsp;<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Himashana/CHN-Whiteboard/CodeQL">&nbsp;<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/himashana/CHN-Whiteboard">
+# CHN-Whiteboard 
+<a href="https://github.com/Himashana/CHN-Whiteboard/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Himashana/CHN-Whiteboard">&nbsp;</a><a href="https://github.com/Himashana/CHN-Whiteboard/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Himashana/CHN-Whiteboard"></a>&nbsp;<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Himashana/CHN-Whiteboard/CodeQL">&nbsp;<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/himashana/CHN-Whiteboard">
 
 
 CHN Software Developers product
@@ -43,11 +44,11 @@ CHN-Whiteboard-x.x.x/
 ```
 ## Released versions
 
-| Version | Released date          | End-of-service         | Supported          | Download           |
-| ------- | ---------------------- | ---------------------- | ------------------ | ------------------ |
-| 1.2.0   | Jun 16, 2021           | Sep 30, 2021           | :white_check_mark: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.2.0 |
-| 1.0.1   | May 21, 2021           | Jun 30, 2021           | :x: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.0.1 |
-| 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |Link not found!|
+| Version | Released date          | Download           |
+| ------- | ---------------------- | ------------------ |
+| 1.2.0   | Jun 16, 2021           |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.2.0 |
+| 1.0.1   | May 21, 2021           |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.0.1 |
+| 1.0.0   | May 16, 2021           |Link not found!|
 
 ## Prerequisites
 
