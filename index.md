@@ -1,37 +1,87 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/Himashana/CHN-Whiteboard/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# CHN-Whiteboard <a href="https://github.com/Himashana/CHN-Whiteboard/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Himashana/CHN-Whiteboard">&nbsp;</a><a href="https://github.com/Himashana/CHN-Whiteboard/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Himashana/CHN-Whiteboard"></a>&nbsp;<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/Himashana/CHN-Whiteboard/CodeQL">&nbsp;<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/himashana/CHN-Whiteboard">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+CHN Software Developers product
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+CHN Whiteboard is an Online Whiteboard Platform. You must need an internet connection to work with CHN Whiteboard.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+> Get last updates : [_https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html_](https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard%20App/Update.html)
+> 
+> CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/](https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/)
+> 
+> CHN-Whiteboard-Installer 🟢`(recommended)`🟢 : [https://himashana.github.io/CHN-Whiteboard-Installer/](https://himashana.github.io/CHN-Whiteboard-Installer/)
+> 
+> You also can use CHN Whiteboard [web version..](https://chnsoftwaredevelopers.com/Loading.html)
 
-- Bulleted
-- List
+## Files
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```text
+CHN-Whiteboard-x.x.x/
+├── .github/
+│   ├── workflows/
+│       ├── codeql-analysis.yml
+│       ├── main.yml
+│       ├── npm-publish.yml
+│       ├── python-package.yml
+├── CHN_Whiteboard/
+│   ├── assets/
+│   │   ├── Screenshot 2021-05-30 151305.png
+│   │   ├── assets.txt
+│   ├── CSSrefresh.js
+│   ├── Update.js
+│   ├── Whiteboard.html
+│   ├── execute.py
+│   ├── run.js
+│   ├── service.js
+│   ├── stoped.html
+├── README.md
+├── SECURITY.md
+└── package.json
+    
 ```
+## Released versions
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+| Version | Released date          | End-of-service         | Supported          | Download           |
+| ------- | ---------------------- | ---------------------- | ------------------ | ------------------ |
+| 1.2.0   | Jun 16, 2021           | Sep 30, 2021           | :white_check_mark: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.2.0 |
+| 1.0.1   | May 21, 2021           | Jun 30, 2021           | :x: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.0.1 |
+| 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |Link not found!|
 
-### Jekyll Themes
+## Prerequisites
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Himashana/CHN-Whiteboard/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+> If you use [CHN-Whiteboard-Installer](https://himashana.github.io/CHN-Whiteboard-Installer/), prerequisites will automatically install in your computer.
 
-### Support or Contact
+1. Python latest version
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+2. tqdm
+   ```text
+   py -m pip install tqdm
+   ```
+3. requests
+   ```text
+   py -m pip install requests
+   ```
+4. PyQt5
+   ```text
+   py -m pip install PyQt5
+   ```   
+   
+5. PyQtWebEngine
+   ```text
+   py -m pip install PyQtWebEngine
+   ```     
+See CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/](https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/)
+
+
+# Execute CHN Whiteboard from command prompt
+
+  ```text
+  cd C:\Program Files (x86)\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard
+   ``` 
+   
+   ```text
+   cd C:\Program Files\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard
+   ``` 
+
