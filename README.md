@@ -58,7 +58,7 @@ CHN-Whiteboard-x.x.x/
 
 ## Prerequisites
 
-> If you use CHN-Whiteboard-Installer, prerequisites will automatically install in your computer.
+> If you use [CHN-Whiteboard-Installer](https://himashana.github.io/CHN-Whiteboard-Installer/), prerequisites will automatically install in your computer.
 
 1. Python latest version
 
