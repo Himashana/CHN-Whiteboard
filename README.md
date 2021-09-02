@@ -21,7 +21,8 @@ CHN Whiteboard is an Online Whiteboard Platform. You must need an internet conne
 > CHN-Whiteboard-Installer 🟢`(recommended)`🟢 : [https://himashana.github.io/CHN-Whiteboard-Installer/](https://himashana.github.io/CHN-Whiteboard-Installer/)
 > 
 > You also can use CHN Whiteboard [web version..](https://chnsoftwaredevelopers.com/Loading.html)
-> Info : [CHN Whiteboard info page](https://himashana.github.io/CHN-Whiteboard/)
+> 
+> CHN Whiteboard info page : [https://himashana.github.io/CHN-Whiteboard/](https://himashana.github.io/CHN-Whiteboard/)
 ## Files
 
 ```text
