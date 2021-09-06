@@ -93,3 +93,6 @@ See CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-C
    cd C:\Program Files\CHN Software Developers\CHN-Whiteboard-1.2\CHN_Whiteboard
    ``` 
 
+Or
+
+> [See](https://github.com/Himashana/CHN-Whiteboard/wiki/Execute-CHN-Whiteboard-from-the-command-prompt#create-a-shortcut) how to create a shortcut.
