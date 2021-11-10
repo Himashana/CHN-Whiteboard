@@ -18,11 +18,9 @@ CHN Whiteboard is an Online Whiteboard Platform. You must need an internet conne
 > 
 > CHN Whiteboard Installation guide : [https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/](https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/)
 > 
-> CHN-Whiteboard-Installer 🟢`(recommended)`🟢 : [https://himashana.github.io/CHN-Whiteboard-Installer/](https://himashana.github.io/CHN-Whiteboard-Installer/)
 > 
-> You also can use CHN Whiteboard [web version..](https://chnsoftwaredevelopers.com/Loading.html)
+> You also can use CHN Whiteboard [web version..](https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard%20App/index.html)
 > 
-> CHN Whiteboard info page : [https://himashana.github.io/CHN-Whiteboard/](https://himashana.github.io/CHN-Whiteboard/)
 ## Files
 
 ```text
@@ -53,8 +51,8 @@ CHN-Whiteboard-x.x.x/
 
 | Version | Released date          | End-of-service         | Supported          | Download           |
 | ------- | ---------------------- | ---------------------- | ------------------ | ------------------ |
-| 1.2.0   | Jun 16, 2021           | Sep 30, 2021           | :white_check_mark: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.2.0 |
-| 1.0.1   | May 21, 2021           | Jun 30, 2021           | :x: |https://github.com/Himashana/CHN-Whiteboard/releases/tag/v1.0.1 |
+| 1.2.0[LTS]   | Jun 16, 2021           | Sep 30, 2021           | :white_check_mark: |https://himashana.github.io/CHN-Whiteboard-Installer|
+| 1.0.1   | May 21, 2021           | Jun 30, 2021           | :x: |Link not found!|
 | 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |Link not found!|
 
 ## Prerequisites
