@@ -1,3 +1,5 @@
+#Whiteboard v1.3.0
+
 from tqdm import tqdm
 import requests
 import webbrowser
