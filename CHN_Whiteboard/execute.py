@@ -1,5 +1,4 @@
-#Whiteboard v1.3.0
-
+#Supported Whiteboard version : v1.3.0
 from tqdm import tqdm
 import requests
 import webbrowser

@@ -1,18 +1,19 @@
-﻿
-<!DOCTYPE html>
-
-
+﻿<!DOCTYPE html>
 <html>
 <head>
-
-
+    
     <title>CHN Classroom - Whiteboard</title>
-
+    
+    <!-- External link [Style.css] Server side file -->
     <link rel="stylesheet" href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Style.css">
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- External link [fontawesome connection] -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    
     <style>
         .Toolbox {
             top:20px;
@@ -49,12 +50,6 @@
         }
         
     </style>
-
-    
-
-
-
-
 </head>
 <body role="document">
     
@@ -108,8 +103,8 @@
     <div class="Toolbox">
         <button onclick="Write();"><i class="fa fa-pencil" style="font-size:48px;color:black"></i></button>
         <button onclick="Erase();"><i class="fa fa-eraser" style="font-size:48px;color:black"></i></button>
-        <button onclick="Undo();"><i class="fa fa-undo" style="font-size:48px;color:black"></i></button>
-        <button onclick="Redo();"><i class="fa fa-undo fa-flip-horizontal" style="font-size:48px;color:black"></i></button>
+        <button onclick="Undo();" id="undobtn"><i class="fa fa-undo" style="font-size:48px;color:black"></i></button>
+        <button onclick="Redo();" id="redobtn"><i class="fa fa-undo fa-flip-horizontal" style="font-size:48px;color:black"></i></button>
         <button onclick="Grid();" id="Grid-btn"><i class="fa fa-toggle-on" style="font-size:48px;color:black"></i></button>
         <button onclick="Reload();" id="Reload-btn"><i class="fa fa-refresh" style="font-size:48px;color:black"></i></button>
         <a href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/session.exe/?Auth=GGRI4445000000000000000000000000004455-DKGPAEC49COF002N4I6OVCVIDDOBDKDKFORRRIIT-S" target="_blank"><button><i class="fa fa-plus-square" style="font-size:48px;color:black"></i></button></a>
@@ -134,7 +129,7 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
     
     <div id="update"><h3>New version available!&nbsp;<a href="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html"><button>Update now</button></a>&nbsp;<button onclick="cancel_update();">Cancel update</button></h3><br /><p id="Update_txt">This version will stop working after few days.</p></div>
     
-    
+    <!-- External link [Function.js] Server side file -->
     <script src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Function.js"></script>
     
     <!--Refresh the external links.-->
@@ -172,18 +167,16 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
         }
         
         function Reload(){
-            //document.getElementById("Reload-btn").disabled = true;
             document.getElementById("Reload-btn").style.backgroundColor = "Yellow";
             document.getElementById("re-loading").style.display = "Block";
             location.reload();
-            
         }
         function reload_cancel(){
             document.getElementById("re-loading").style.display = "none";
         }
     </script>
     
-      <script>
+    <script>
         window.onbeforeunload = function (e) {
             e = e || window.event;
         
@@ -193,17 +186,13 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
         
             return 'Sure?';
         };
-</script>  
-
-
-
+    </script>  
 
     <center>
         <a href="https://chnsoftwaredevelopers.com">
             <p>copyright &#169; CHN software developers </p>
         </a>
     </center>
-
 
 </body>
 </html>
