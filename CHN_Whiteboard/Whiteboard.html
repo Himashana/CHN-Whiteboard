@@ -9,11 +9,15 @@
     
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+
     <!-- External link [fontawesome connection] -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
     
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
     <style>
         .Toolbox {
             top:20px;
@@ -49,14 +53,34 @@
             display:none;
         }
         
+        .popup{
+            position:fixed;
+            transform: translate(-50%, -50%);
+            top: 55%;
+            left: 50%;
+            background-color:#F9F189;
+            width:580px;
+            padding:10px;
+            display:none;
+        }
+        
+        .tourWindowscss{
+            position:fixed;
+            background-color:#5DADE2;
+            color:white;
+            padding:10px;
+            top: 85px;
+            left: 0px;
+            display:none;
+        }
     </style>
 </head>
 <body role="document">
     
-    <div id="header"><h3>CHN Classroom - Whiteboard 1.3.0-preview-1</h3></div>
+    <div id="header"><h3>CHN Classroom - Whiteboard 1.3.0-preview-1 <button id="autosaveBtn" onclick="showautosaveWindow();">AUTO SAVE : OFF</button>&nbsp;<button onclick="takeTour();">QUICK TOUR</button></h3></div>
     <iframe id="code" style="background:none transparent; position:fixed; left:10%; top:90px; width:40%; height:20px; resize:both; border:1px solid black;"></iframe>
     <div id="shape_box" style="background-color:red; border-radius:50%; display:none; position:fixed; left:10%; top:90px; width:5px; height:5px; resize:both; border:1px solid black;"></div>
-    <div class="Toolbox2">
+    <div class="Toolbox2" id="colorAndFont">
         <br /><br /><br /><br /><br />
         <button onclick="Green();"><i class="fa fa-pencil" style="font-size:48px;color:green"></i></button><br /><br />
         <button onclick="Yellow();"><i class="fa fa-pencil" style="font-size:48px;color:yellow"></i></button><br /><br />
@@ -100,14 +124,16 @@
     </div>
     
 
-    <div class="Toolbox">
+    <div class="Toolbox" id="MainTools">
         <button onclick="Write();"><i class="fa fa-pencil" style="font-size:48px;color:black"></i></button>
         <button onclick="Erase();"><i class="fa fa-eraser" style="font-size:48px;color:black"></i></button>
         <button onclick="Undo();" id="undobtn"><i class="fa fa-undo" style="font-size:48px;color:black"></i></button>
         <button onclick="Redo();" id="redobtn"><i class="fa fa-undo fa-flip-horizontal" style="font-size:48px;color:black"></i></button>
         <button onclick="Grid();" id="Grid-btn"><i class="fa fa-toggle-on" style="font-size:48px;color:black"></i></button>
+        <button onclick="toggleinputmethod();" id="inputMethodBtn"><i class="fa fa-mobile" style="font-size:48px;color:black"></i></button>
         <button onclick="Reload();" id="Reload-btn"><i class="fa fa-refresh" style="font-size:48px;color:black"></i></button>
         <a href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/session.exe/?Auth=GGRI4445000000000000000000000000004455-DKGPAEC49COF002N4I6OVCVIDDOBDKDKFORRRIIT-S" target="_blank"><button><i class="fa fa-plus-square" style="font-size:48px;color:black"></i></button></a>
+        <button onclick="exportData();" id="Reload-btn"><i class="fa fa-external-link" style="font-size:48px;color:black"></i></button>
     </div>
 
 
@@ -121,13 +147,45 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
         </div>
 
     </div>
-   
+    
+    <!-- Tour background -->
+   <div id="tourBackground" style="background-color:black; opacity:40%; width:100%; height:100%; color:white; position:fixed; display:none;"></div>
+    
+    <!-- Reloading window -->
     <div id="re-loading" style="background-color:black; width:100%; height:100%; color:white; position:fixed; display:none;">Reloading CHN Whiteboard...<br>Cleaning data...<br><button onclick="reload_cancel();">Cancel</button></div>
     
     <canvas id="canvas"></canvas>
     
+    <!-- Get or restore data from dataURL -->
+    <div class="popup" id="exportwindow">
+        <h3>Copy Whiteboard Data URL:</h3><br>
+        <p>You can use the following data URL to save your drawing to use later or share your drawing with others.</p><br>
+        <textarea id="dataURLbox" style="width:560px; height:150px;">Data URL</textarea><br>
+        <hr><br>
+        <h3>Restore Whiteboard from Data URL:</h3><br>
+        <textarea id="dataUrlRestoreBox" style="width:560px; height:150px;">Enter the Data URL you want to restore.</textarea><br>
+        <button onclick='restoreURLdata();'>Restore from data URL</button>&nbsp;
+        <button onclick='closeexportwindow();'>Done</button>
+        <br><br>
+    </div>
+    
+    <!-- Autosave Window -->
+    <div class="popup" id="autosaveWindow">
+        <h3>Autosave whiteboard :</h3><br>
+        <p>Please note that you can save only one whiteboard in your browser's local storage. If you have previously saved data this will overwrite them.</p><br>
+        <button onclick="closeautosaveWindow();">Cancel</button>&nbsp;<button onclick="enableAutosave();">Turn on</button><br><br>
+    </div>
     
     <div id="update"><h3>New version available!&nbsp;<a href="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html"><button>Update now</button></a>&nbsp;<button onclick="cancel_update();">Cancel update</button></h3><br /><p id="Update_txt">This version will stop working after few days.</p></div>
+    
+    <!-- =====================================Tour Windows=================================================== -->
+    
+    <div id="win1" class="tourWindowscss">
+        <h3 id="tourHeading">Main tools</h3><hr>
+        <p id="tourText">You can use these tools to <br>handle the main tasks in the <br>Whiteboard.</p><br>
+        <button id="tourWindowBtn" onclick="takeTour();" style="border:2px solid #5DADE2; background-color:white; color:#5DADE2; padding:4px; font-size:16px; border-radius:10px;">Next >></button>
+    </div>
+    <!-- ==================================================================================================== -->
     
     <!-- External link [Function.js] Server side file -->
     <script src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Function.js"></script>
@@ -175,18 +233,6 @@ Your browser does not support the HTML canvas tag.</canvas></textarea>
             document.getElementById("re-loading").style.display = "none";
         }
     </script>
-    
-    <script>
-        window.onbeforeunload = function (e) {
-            e = e || window.event;
-        
-            if (e) {
-                e.returnValue = 'Sure?';
-            }
-        
-            return 'Sure?';
-        };
-    </script>  
 
     <center>
         <a href="https://chnsoftwaredevelopers.com">
