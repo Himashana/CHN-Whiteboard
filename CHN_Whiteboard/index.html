@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <title>CHN Whiteboard - Working...</title>
+    <style>
+        body {
+            background-color: #0000ad;
+        }
+
+        .cmd {
+            width: 900px;
+            height: 500px;
+            background-color: black;
+            border: 3px solid white;
+            color: white;
+            display : none;
+        }
+
+        .hed {
+            background-color: white;
+            color: black;
+        }
+
+        .close {
+            color: black;
+            float: right;
+            font-weight: bold;
+            text-decoration: none;
+            width: 20px;
+            padding: 2px 2px;
+        }
+
+        .close:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .screen {
+            width: 80%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: green;
+            border-color: green;
+            width: 900px;
+            height: 500px;
+            color: white;
+            display: none;
+        }
+    </style>
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cmd">
+        <div class="hed">
+            \execute.bat<a href="" class="close"> &times;</a>
+        </div>
+        <p>Prepairing to launch CHN Whiteboard...</p>
+
+    </div>
+    <div class="screen" id="scr">
+        <Center>
+            <h2>CHN Classroom - Whiteboard</h2>
+        </Center>
+        <center>
+            <div class="loader"></div>
+        </center>
+        <center>
+            <div id="myDIV"></div>
+        </center>
+    </div>
+
+    <div style="position:fixed; background-color:black; bottom:0px; left:0px; width:100%; color:white; padding:0px;">
+        <p>CHNSD SOFTWARE MANAGEMENT</p>
+    </div>
+
+
+    <script>
+        var i = 0;
+        var z = document.getElementById("scr");
+        var x = document.getElementById("myDIV");
+        var y = setInterval(function () {
+            if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("myBar");
+                var width = 0;
+                var id = setInterval(frame, 100);
+                function frame() {
+                    if (width >= 50) {
+                        z.style.display = "block";
+
+                    }
+                    if (width >= 60) {
+                        x.innerHTML = "Verifying license...";
+
+                    }
+                    if (width >= 80) {
+                        x.innerHTML = "Loading plug-ins...";
+                    }
+                    if (width >= 100) {
+                        x.innerHTML = "Loading css and js pages...";
+                    }
+                    if (width >= 120) {
+                        x.innerHTML = "Running application...";
+                    }
+                    if (width >= 150) {
+                        clearInterval(id);
+                        i = 0;
+                        location.replace("Whiteboard.html");
+                    } else {
+                        width++;
+                        elem.style.width = width + "%";
+                        elem.innerHTML = "Loading : " + width + "%";
+                    }
+                }
+            }
+        }, 1000);
+
+    </script>
+</body>
+</html>

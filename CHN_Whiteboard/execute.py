@@ -1,21 +1,59 @@
 #Supported Whiteboard version : v1.3.0
-from tqdm import tqdm
-import requests
-import webbrowser
-import time
 
+print("Loading application...", end="\r")
+try:
+    from PyQt5.QtCore import QUrl
+    from tqdm import tqdm
+    import requests
+    import webbrowser
+    import time
+    import sys
+    from PyQt5.QtCore import *
+    from PyQt5. QtWidgets import *
+    from PyQt5.QtWebEngineWidgets import *
+    import pathlib
+except Exception as e:
+    print(e)
 
-f = open("service.js", "a")
-i = open("info.txt", "a")
-x = 0
-y = 0
+class mainApplication(QMainWindow):
+    def __init__(self):
+        super(mainApplication, self).__init__()
+        self.version = "1.2.0"
+        self.WhitOpenFilePath = None
 
-chunk_size = 1
+    def downloadUpdater(self):
+        chunk_size = 1
+        url = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.py"
+        r = requests.get(url, stream = True)
 
-url = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.py"
+        for i in tqdm (range (11), desc="Preparing files...", ascii=False, ncols=75):
+	        time.sleep(0.01)
+   
+        total = int(r.headers['content-length'])
+            
+        with open("Update.py", 'wb') as d:
+            for data in tqdm(iterable = r.iter_content(chunk_size = chunk_size), total = total/chunk_size, unit='KB'):
+                d.write(data)
 
-r = requests.get(url, stream = True)
+    def checkForUpdates(self):
+        checkForUpdatesURL = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.php?v=" + self.version
+        r = requests.get(checkForUpdatesURL)
+        updateStatus = r.text
+        return updateStatus        
 
+    def getFilePath(self):
+        #Return file path as a URL
+        self.WhitOpenFilePath = pathlib.Path().resolve()
+        self.WhitOpenFilePath = str(self.WhitOpenFilePath) + '/index.html'
+        self.WhitOpenFilePath = self.WhitOpenFilePath.replace('\\', '/')
+        self.WhitOpenFilePath = "file:///" + self.WhitOpenFilePath
+        return self.WhitOpenFilePath
+
+    def displayWhiteboard(self):
+        self.browser = QWebEngineView()
+        self.browser.setUrl(QUrl(self.WhitOpenFilePath))
+        self.setCentralWidget(self.browser)
+        self.showMaximized()
 
 print("_______________________________________________________________")
 print("")
@@ -27,85 +65,75 @@ print("    /_______/    /_/      /_/     /_/    \ _/")
 print("             CHN Software Developers")
 print("_______________________________________________________________")
 print("")
-update = input("Required to download 'update.py' updates(recommended). If you continue, this will automatically download updates(Make sure you have an active internet connection). ")
-print("_______________________________________________________________")
-for i in tqdm (range (241),
-			desc="Preparing files...",
-			ascii=False, ncols=75):
-	time.sleep(0.01)
-	
-print("Ready to download updates.")
+update = input("Required to download 'update.py' self updater(recommended). If you continue, this will automatically download updates(Make sure you have an active internet connection). ")
 print("_______________________________________________________________")
 
-total = int(r.headers['content-length'])
-with open("Update.py", 'wb') as d:
-    for data in tqdm(iterable = r.iter_content(chunk_size = chunk_size), total = total/chunk_size, unit='KB'):
-        d.write(data)
-print("Updated successfully!")
-print("_______________________________________________________________")
+Whiteboard = QApplication(sys.argv)
+QApplication.setApplicationName('CHN Whiteboard v1.3.0')
+app = mainApplication()
 
-c_f_url = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/Update.php?v=1.2.0"
-r = requests.get(c_f_url)
-data = r.text
-print("")
-print(r.text)
-print("")
+updateAvailable = False
 
-if(r.text == "You are up to date!"):
-    x = 0
-else:
-    x = 1
-    execute_update = input("")
+try:
+    print("Ready to download updates.")
+    print("_______________________________________________________________")
+    app.downloadUpdater()
+    print("Self updater downloaded successfully!")
+    print("_______________________________________________________________")
+except:
+    print("Download error[Self updater] : Error")
+    print("_______________________________________________________________")
+    input()
+    quit()
 
-while x == 0 :
-    open = input("Do you want to start 'service.js' javascript(y/n)? ")
-    if open == "y" or open == "Y" :
-    
-        f.truncate(0)
-        f.write('')
-        
-        #webbrowser.open("https://chnsoftwaredevelopers.com/")
-        webbrowser.open("Whiteboard.html")
-        
-        print("Started succesfully")
-        print("Application is running in your browser")
+try:
+    updateStatus = app.checkForUpdates()
+    print("\n" + updateStatus + "\n")
+    if(updateStatus == "You are up to date!"):
+        updateAvailable = False
+    else:
+        updateAvailable = True
+        input()
+except:
+    print("Error check for updates[Self updater] : Error")
+    print("_______________________________________________________________")
+    input()
+    quit()
 
-        print("_______________________________________________________________")
-        print("Enter 'stop()' to stop 'service.js' javascript")
-        print("_______________________________________________________________")
-        
-        while y == 0 :
-            stop = input("")
-            if stop == "stop()" :
-              stop_confirm = input("Click enter to stop 'sevice.js' javascript")  
-              f.truncate(0)
-              f.write('location.replace("stoped.html");')
-              f.close()
-              x = 1
-              y = 1
-              break;
-            else :
-                print("Error occured : Undefined")
-    elif open == "n" or open == "N":
-        print("Exit()")
-        exit = input("")
-        if exit == "setup.start --whiteboard" :
-            f.truncate(0)
-            f.write('location.replace("stoped.html");')
-            f.close()
-            print("service.js - Overwrite")
-            i.truncate(0)
-            i.write('CHN_Whiteboard - v1.2.0')
-            i.close()       
-            print("Created info.txt")
+if updateAvailable == False:
+    while True:
+        open = input("Do you want to start CHN Whiteboard [this will overwrite 'service.js' javascript(y/n)]? ").strip().lower()
+        if open == "y":
+            try:
+                f = open("service.js", "a")
+                f.truncate(0)
+                f.write('')
+                f.close()
+                filePath = app.getFilePath()
+                app.displayWhiteboard()
+                print("Started succesfully")
+                print("Application is running[" + filePath + "]...")
+            except Exception as startError:
+                print('Error [ ' + str(startError) + ' ] : unable to start the application.')
+                input()
+
             print("_______________________________________________________________")
-            print("Setup successfully")
-            setup_compleate = input("")
-            break;
+            print("Enter 'stop()' to stop CHN Whiteboard.")
+            print("_______________________________________________________________")
+            while True:
+                stop = input("> ").strip().lower()
+                if stop == "stop()":
+                    input("Click enter to stop application.")  
+                    f = open("service.js", "a")
+                    f.truncate(0)
+                    f.write('location.replace("stoped.html");')
+                    f.close()
+                    quit()
+                else :
+                    print("Error occured : Undefined")
+            
+        elif open == "n":
+                input("Click enter to exit.")  
+                break;
         else:
-            f.truncate(0)
-            f.write('location.replace("stoped.html");')
-            f.close()
-            break;
-    else :
-        print("Error occured : Undefined")
+            print("Error occured : Undefined")
