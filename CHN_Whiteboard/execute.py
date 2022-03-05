@@ -100,15 +100,16 @@ except:
     input()
     quit()
 
+#Open service.js file
+f = open('service.js', 'w')
+
 if updateAvailable == False:
     while True:
         open = input("Do you want to start CHN Whiteboard [this will overwrite 'service.js' javascript(y/n)]? ").strip().lower()
         if open == "y":
             try:
-                f = open("service.js", "a")
-                f.truncate(0)
-                f.write('')
-                f.close()
+                f.write("")
+                print("Starting...", end="\r")
                 filePath = app.getFilePath()
                 app.displayWhiteboard()
                 print("Started succesfully")
@@ -123,11 +124,8 @@ if updateAvailable == False:
             while True:
                 stop = input("> ").strip().lower()
                 if stop == "stop()":
-                    input("Click enter to stop application.")  
-                    f = open("service.js", "a")
-                    f.truncate(0)
+                    input("Click enter to stop the application.")
                     f.write('location.replace("stoped.html");')
-                    f.close()
                     quit()
                 else :
                     print("Error occured : Undefined")
@@ -137,3 +135,5 @@ if updateAvailable == False:
                 break;
         else:
             print("Error occured : Undefined")
+#Close service.js file.
+f.close()
