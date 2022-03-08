@@ -37,8 +37,10 @@ CHN-Whiteboard-x.x.x/
 │   │   ├── assets.txt
 │   ├── CSSrefresh.js
 │   ├── Update.js
+|   ├── index.html
 │   ├── Whiteboard.html
-│   ├── execute.py
+│   ├── execute.bat
+|   ├── execute.py
 │   ├── run.js
 │   ├── service.js
 │   ├── stoped.html
@@ -51,7 +53,7 @@ CHN-Whiteboard-x.x.x/
 
 | Version | Released date          | End-of-service         | Supported          | Download           |
 | ------- | ---------------------- | ---------------------- | ------------------ | ------------------ |
-| 1.2.0[LTS]   | Jun 16, 2021           | Sep 30, 2021           | :white_check_mark: |https://himashana.github.io/CHN-Whiteboard-Installer|
+| 1.2.0_**[LTS]**_   | Jun 16, 2021           | Sep 30, 2021           | :white_check_mark: |https://himashana.github.io/CHN-Whiteboard-Installer|
 | 1.0.1   | May 21, 2021           | Jun 30, 2021           | :x: |Link not found!|
 | 1.0.0   | May 16, 2021           | Jun 10, 2021           | :x: |Link not found!|
 

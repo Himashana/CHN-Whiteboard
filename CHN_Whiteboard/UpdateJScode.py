@@ -9,7 +9,7 @@ class WhitboardWindow(QMainWindow):
     def __init__(self):
         super(WhitboardWindow, self).__init__()
         self.browser = QWebEngineView()
-        self.browser.setUrl(QUrl('https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Function.js'))
+        self.browser.setUrl(QUrl('https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Function.min.js'))
         self.setCentralWidget(self.browser)
         self.showMaximized()
 

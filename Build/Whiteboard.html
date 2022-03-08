@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>CHN Classroom - Whiteboard</title>
+    
+    <!-- External link [Style.css] Server side file -->
+    <link rel="stylesheet" href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Style.css">
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- External link [fontawesome connection] -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+    
+    <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <style>
+        .Toolbox {
+            top:20px;
+            background-color: #ddd;
+            position: fixed;
+            border: 5px solid black;
+            width: 50%;
+            padding: 5px;
+            height: 70px;
+        }
+
+        .Toolbox2 {
+            top:20px;
+            background-color: #ddd;
+            position: fixed;
+            border: 5px solid black;
+            width: 10%;
+            padding: 5px;
+            height: 100%;
+        }
+        
+        .Toolbox3 {
+            bottom:0px;
+            left:10%;
+            background-color: #ddd;
+            position: fixed;
+            border: 5px solid black;
+            width: 90%;
+            padding: 5px;
+            height: 100px;
+        }
+        .canvas_setup{
+            display:none;
+        }
+        
+        .popup{
+            position:fixed;
+            transform: translate(-50%, -50%);
+            top: 55%;
+            left: 50%;
+            background-color:#F9F189;
+            width:580px;
+            padding:10px;
+            display:none;
+        }
+        
+        .tourWindowscss{
+            position:fixed;
+            background-color:#5DADE2;
+            color:white;
+            padding:10px;
+            display:none;
+        }
+        
+        .waitingBox{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display:none;
+        }
+    </style>
+</head>
+<body role="document">
+    
+    <div id="header"><h3>CHN Classroom - Whiteboard 1.3.0&nbsp;<button id="autosaveBtn" onclick="showautosaveWindow();">AUTO SAVE : OFF</button>&nbsp;<button id="tourStartBtn" onclick="takeTour();">QUICK TOUR</button>&nbsp;<button onclick="giveFeedback();">FEEDBACK</button></h3></div>
+    <iframe id="code" style="background:none transparent; position:fixed; left:10%; top:90px; width:40%; height:20px; resize:both; border:1px solid black;"></iframe>
+    <div id="shape_box" style="background-color:red; border-radius:50%; display:none; position:fixed; left:10%; top:90px; width:5px; height:5px; resize:both; border:1px solid black;"></div>
+    <div class="Toolbox2" id="colorAndFont">
+        <br /><br /><br /><br /><br />
+        <button onclick="Green();"><i class="fa fa-pencil" style="font-size:48px;color:green"></i></button><br /><br />
+        <button onclick="Yellow();"><i class="fa fa-pencil" style="font-size:48px;color:yellow"></i></button><br /><br />
+        <button onclick="Red();"><i class="fa fa-pencil" style="font-size:48px;color:red"></i></button><br /><br />
+        <button onclick="Blue();"><i class="fa fa-pencil" style="font-size:48px;color:blue"></i></button><br /><br /><hr />
+        <button onclick="Size1();"><p style="font-size:48px;color:blue">01</p></button><br /><br />
+        <button onclick="Size2();"><p style="font-size:48px;color:blue">05</p></button><br /><br />
+        <button onclick="Size3();"><p style="font-size:48px;color:blue">10</p></button><br /><br /><hr />
+    </div>
+    
+    <div class="Toolbox" style="right:0%; top:75%; width:90%; height:60px; display:none;">
+        
+        <textarea style="width:90%; height:40px;" id="output" disabled></textarea>
+    </div>
+    
+    <div class="Toolbox" id="properties" style="right:9%; width:10%; height:50%; display:none;">
+        <p>Properties</p><hr>
+        Text
+        <input type="text" value="Your Text" id="textinput" style="width:88%;"><br><br>
+        Fontsize
+        <input type="number" id="fontsize" name="fontsize" min="1" max="100" value="30"><br><br>
+        Align
+        <select name="textalign" id="textalign">
+            <option value="Left">Left</option>
+            <option value="Center">Center</option>
+            <option value="Right">Right</option>
+        </select>
+        <br><br>
+        click anywhere to insert the text.
+        
+    </div>
+    
+    <div class="Toolbox" id="TextsShapesBox" style="right:0%; width:10%; height:50%;">
+        <p>Text</p><hr>
+        <button onclick="Textdraw();" id="Reload-btn" style="font-size:23px;color:black">Aa</button>
+        <p>Shapes</p><hr>
+        <button onclick="Pendraw();" id="Reload-btn"><i class="fa fa-pencil" style="font-size:30px;color:black"></i></button>
+        <button onclick="Linedraw();" id="Reload-btn"><i class="fa fa-minus" style="font-size:30px;color:black"></i></button>
+        <button onclick="Squaredraw();" id="Reload-btn"><i class="fa fa-object-ungroup" style="font-size:30px;color:black"></i></button>
+        <button onclick="Circledraw();" id="Reload-btn"><i class="fa fa-circle" style="font-size:30px;color:black"></i></button>
+    </div>
+    
+
+    <div class="Toolbox" id="MainTools">
+        <button onclick="Write();"><i class="fa fa-pencil" style="font-size:48px;color:black"></i></button>
+        <button onclick="Erase();"><i class="fa fa-eraser" style="font-size:48px;color:black"></i></button>
+        <button onclick="Undo();" id="undobtn"><i class="fa fa-undo" style="font-size:48px;color:black"></i></button>
+        <button onclick="Redo();" id="redobtn"><i class="fa fa-undo fa-flip-horizontal" style="font-size:48px;color:black"></i></button>
+        <button onclick="Grid();" id="Grid-btn"><i class="fa fa-toggle-on" style="font-size:48px;color:black"></i></button>
+        <button onclick="toggleinputmethod();" id="inputMethodBtn"><i class="fa fa-mobile" style="font-size:48px;color:black"></i></button>
+        <button onclick="Reload();" id="Reload-btn"><i class="fa fa-refresh" style="font-size:48px;color:black"></i></button>
+        <button onclick="exportData();" id="exportFunctionBtn"><i class="fa fa-external-link" style="font-size:48px;color:black"></i></button>
+    </div>
+
+
+    <div class="Toolbox3">
+        <p id="canvas_setup_txt">canvas_setup not installed. To install it run PackageManager.py and type 'canvas_setup --install'(<a href="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/CHN-Whiteboard-install-assistant/index.php?page=canvas_setup">More info!</a>).</p>
+        <div class="canvas_setup" id="canvas_setup">
+        <textarea id="html" placeholder="HTML" style="height:80px; width:40%; background-color:black; color:white;"><canvas id="myCanvas" width="2000" height="2000">
+Your browser does not support the HTML canvas tag.</canvas></textarea>
+        <textarea id="css" placeholder="CSS" style="height:80px; width:15%; background-color:black; color:white;"></textarea>
+        <textarea id="js" placeholder="JavaScript" style="height:80px; width:44%; background-color:black; color:white;"></textarea>
+        </div>
+
+    </div>
+    
+    <!-- Feedback -->
+    <div id="feedbackWindow" class="popup" style="height:80%; width:70%">
+        <iframe style="height:95%; width:100%" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAASLX8DpUNE1XVERFOEM3N0dISklWWEVQUEVSMlNNVC4u&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+        <button onclick="closeFeedback();">Close</button>
+    </div>
+    
+    
+    <!-- Tour background -->
+    <div id="highlightTour0" style="background-color:blue; opacity:5%; color:white; position:fixed; display:none;"></div>
+    <div id="highlightTour1" style="background-color:blue; opacity:5%; color:white; position:fixed; display:none;"></div>
+    <div id="highlightTour2" style="background-color:blue; opacity:5%; color:white; position:fixed; display:none;"></div>
+   <div id="tourBackground" style="background-color:black; opacity:40%; width:100%; height:100%; color:white; position:fixed; display:none;"></div>
+    
+    <!-- Reloading window -->
+    <div id="re-loading" style="background-color:black; width:100%; height:100%; color:white; position:fixed; display:none;">Reloading CHN Whiteboard...<br>Cleaning data...<br><button onclick="reload_cancel();">Cancel</button></div>
+    
+    <canvas id="canvas"></canvas>
+    
+    <!-- Get or restore data from dataURL -->
+    <div class="popup" id="exportwindow">
+        <h3>Copy Whiteboard Data URL:</h3><br>
+        <p>You can use the following data URL to save your drawing to use later or share your drawing with others.</p><br>
+        <textarea id="dataURLbox" style="width:560px; height:150px;">Data URL</textarea><br>
+        <hr><br>
+        <h3>Restore Whiteboard from Data URL:</h3><br>
+        <textarea id="dataUrlRestoreBox" style="width:560px; height:150px;">Enter the Data URL you want to restore.</textarea><br>
+        <button onclick='triggerRestoreURLdata();' id="restoreDataUrlBtn">Restore from data URL</button>&nbsp;
+        <button onclick='restoreAUTOSAVEdata();'>Restore auto saved data</button>&nbsp;
+        <button onclick='closeexportwindow();'>Done</button>
+        <br><br>
+    </div>
+    
+    <!-- Autosave Window -->
+    <div class="popup" id="autosaveWindow">
+        <h3>Autosave whiteboard :</h3><br>
+        <p>Please note that you can save only one whiteboard in your browser's local storage. If you have previously saved data this will overwrite them.</p><br>
+        <div id="autosaveWarning" style="background-color:red; color:white; padding:5px; display:none;"><p>previously saved data found!</p><br><button onclick='restoreAUTOSAVEdata();'>Restore auto saved data</button></div><br>
+        <button onclick="closeautosaveWindow();">Cancel</button>&nbsp;<button onclick="enableAutosave();">Turn on</button><br><br>
+    </div>
+    
+    <div id="update"><h3>New version available!&nbsp;<a href="https://chnsoftwaredevelopers.com/classroom/Whiteboard/Whiteboard App/Update.html"><button>Update now</button></a>&nbsp;<button onclick="cancel_update();">Cancel update</button></h3><br /><p id="Update_txt">This version will stop working after few days.</p></div>
+    
+    <div id="alert"><h3 id="alertHeader">Alert&nbsp;<button onclick="closeAlert();">Close</button></h3><br /><p id="alert_txt"></p></div>
+    
+    <!-- =====================================Tour Windows=================================================== -->
+    
+    <div id="win1" class="tourWindowscss">
+        <h3 id="tourHeading">Main tools</h3><hr>
+        <p id="tourText">You can use these tools to <br>handle the main tasks in the <br>Whiteboard.</p><br>
+        <button id="tourWindowBtn" onclick="takeTour();" style="border:2px solid #5DADE2; background-color:white; color:#5DADE2; padding:4px; font-size:16px; border-radius:10px;">Next >></button>
+    </div>
+    <!-- ==================================================================================================== -->
+    
+    <!-- Waiting window -->
+    <div class="waitingBox" id="waitingBox">
+        <i class="fa fa-refresh fa-spin" style="font-size:48px;color:black;"></i>
+    </div>
+    
+    
+    <!-- External link [Function.min.js] Server side file -->
+    <script src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/Function.min.js"></script>
+    <script src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/alert.js"></script>
+    
+    <!--Refresh the external links.-->
+    <script src="CSSrefresh.js"></script>
+    <script src="Update.js"></script>
+    <script type="text/javascript" src="https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/CHN_Whiteboard/run.min.js"></script>
+    <script src="service.js"></script>
+    <script src="canvas_setup.js"></script>
+    <script>
+        var grid = document.getElementById("canvas");
+        var show = "True";
+        
+        //Get the grid show status by getting local storage saved data.
+        if(localStorage.getItem("GridShow")){
+            if(localStorage.getItem("GridShow") == "False"){
+                grid.style.backgroundImage = "url('')";
+                show = "False";
+                document.getElementById("Grid-btn").innerHTML = "<i class='fa fa-toggle-off' style='font-size:48px;color:black'></i>";
+            }
+        }
+        
+        function Grid(){
+            if(show == "True"){
+                grid.style.backgroundImage = "url('')";
+                show = "False";
+                localStorage.setItem("GridShow", "False");
+                document.getElementById("Grid-btn").innerHTML = "<i class='fa fa-toggle-off' style='font-size:48px;color:black'></i>";
+            }else{
+                grid.style.backgroundImage = "url('https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/CHN_Whiteboard/assets/Screenshot%202021-05-30%20151305.png')";
+                show = "True";
+                localStorage.setItem("GridShow", "True");
+                document.getElementById("Grid-btn").innerHTML = "<i class='fa fa-toggle-on' style='font-size:48px;color:black'></i>";
+            }
+            
+        }
+        
+        function Reload(){
+            document.getElementById("Reload-btn").style.backgroundColor = "Yellow";
+            document.getElementById("re-loading").style.display = "Block";
+            location.reload();
+        }
+        function reload_cancel(){
+            document.getElementById("re-loading").style.display = "none";
+        }
+    </script>
+
+    <center>
+        <a href="https://chnsoftwaredevelopers.com">
+            <p>copyright &#169; CHN software developers </p>
+        </a>
+    </center>
+
+</body>
+</html>

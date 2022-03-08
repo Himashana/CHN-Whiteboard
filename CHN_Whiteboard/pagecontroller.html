@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CHN Whiteboard - Page controller</title>
+        
+        <style>
+            body{
+                overflow-y: hidden;
+                overflow-x: hidden;
+            }
+            
+            .appIframeCss{
+                 height:100%;
+                 width:99%;
+                 position:absolute;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="pageButtons" style="position:fixed; z-Index:1; background-color:white; bottom:0px; left:0px; width:99%;"><button onclick="Addpage();">+</button>&nbsp;</div>
+        <div id="app_Iframe" class="appIframeCss"></div>
+        
+        <script>
+            var pagebtn = [];
+            var page = [];
+            var x = 0;
+            var currentIndex = 0;
+            var count = 0;
+            
+            //Make the first page
+            Addpage();
+            
+            function Addpage(){
+                
+                pagebtn[x] = document.createElement("a");
+                page[x] = document.createElement("iframe");
+                
+                pagebtn[x].innerHTML = "Whiteboard " + (x + 1);
+                pagebtn[x].href = "#" + x;
+                pagebtn[x].style.border = "5px solid green";
+                pagebtn[x].style.backgroundColor = "green";
+                pagebtn[x].style.color = "white";
+                pagebtn[x].class = "pageBtnCss";
+                
+                page[x].src = "Whiteboard.html";
+                page[x].style.width = "100%";
+                page[x].style.height = "100%";
+                page[x].id = x;
+                
+                document.getElementById("pageButtons").appendChild(pagebtn[x]);
+                document.getElementById("app_Iframe").appendChild(page[x]);
+                
+                x = x + 1;
+                
+            }
+            
+            setInterval(function(){
+                    if(count >= x){
+                        count = 0;
+                    }
+                        
+                    while (count <= x){
+                        
+                        currentIndex = window.location.href.substring(window.location.href.lastIndexOf('#') + 1);
+                        if(count == currentIndex){
+                            pagebtn[currentIndex].style.backgroundColor = "#8DEE88";
+                            pagebtn[count].style.color = "black";
+                            pagebtn[count].style.border = "5px solid #8DEE88";
+                        }else{
+                            pagebtn[count].style.backgroundColor = "green";
+                            pagebtn[count].style.color = "white";
+                            pagebtn[count].style.border = "5px solid green";
+                        }
+                        //document.write(currentIndex);
+                        count = count + 1;
+                        
+                    }
+                    
+            }, 1000);
+        </script>
+    </body>
+</html>
