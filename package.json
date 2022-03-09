@@ -16,9 +16,10 @@
         "service":"CHN_Whiteboard\\service.js",
         "stoped":"CHN_Whiteboard\\stoped.html",
         "Update":"CHN_Whiteboard\\Update.js",
-        "Whiteboard":"CHN_Whiteboard\\Whiteboard.html"
+        "Whiteboard":"CHN_Whiteboard\\Whiteboard.html",
+        "imgtodataURL" : "CHN_Whiteboard\\imgtodataURL.py"
     },
     "removepreviousbuilts" : true,
-    "usePyinstaller" : false,
-    "Pyinstallerfile":"execute.py"
+    "usePyinstaller" : true,
+    "Pyinstallerfile":"imgtodataURL.py"
 }
