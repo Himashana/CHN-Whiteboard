@@ -1,7 +1,25 @@
 {
-    "Name" : "CHN-Whiteboard",
-    "version" : "v1.2.0",
-    "Description" : "",
-    "homepage" : "https://chnsoftwaredevelopers.com/",
-    "author": "Himashana"
+    "app-Name": "CHN-Whiteboard",
+    "version": "v1.3.0",
+    "description": "",
+    "homepage": "https://chnsoftwaredevelopers.com",
+    "author": "Himashana",
+    "programmingLanguage": "Python",
+    "targetfolder":"Build",
+    "filesandfolders": {
+        "executer":"CHN_Whiteboard\\execute.bat",
+        "executerinit":"CHN_Whiteboard\\execute.py",
+        "CSSrefresh":"CHN_Whiteboard\\CSSrefresh.js",
+        "index":"CHN_Whiteboard\\index.html",
+        "PackageManager":"CHN_Whiteboard\\PackageManager.py",
+        "pagecontroller":"CHN_Whiteboard\\pagecontroller.html",
+        "service":"CHN_Whiteboard\\service.js",
+        "stoped":"CHN_Whiteboard\\stoped.html",
+        "Update":"CHN_Whiteboard\\Update.js",
+        "Whiteboard":"CHN_Whiteboard\\Whiteboard.html",
+        "imgtodataURL" : "CHN_Whiteboard\\imgtodataURL.py"
+    },
+    "removepreviousbuilts" : true,
+    "usePyinstaller" : true,
+    "Pyinstallerfile":"imgtodataURL.py"
 }

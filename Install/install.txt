@@ -1,10 +1,6 @@
-CHN-Whiteboard-1.2.0 - Setup
+CHN-Whiteboard-1.3.0
 
 Github : https://github.com/Himashana/CHN-Whiteboard
 
-Note : Please make sure you have an active internet connection to install CHN Whiteboard.
-
-
-Designed by Himashana
-
-CHN Software Developers
+Designed and developed by Himashana,
+-- CHN Software Developers --

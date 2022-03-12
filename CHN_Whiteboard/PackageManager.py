@@ -3,7 +3,7 @@ import requests
 
 chunk_size = 1024
 
-canvas_setup = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.2.0/CHN_Whiteboard/canvas_setup.js"
+canvas_setup = "https://chnsoftwaredevelopers.com/CHN-Classroom/Whiteboard/v1.3.0/CHN_Whiteboard/canvas_setup.js"
 
 print("CHN Whiteboard Package manager")
 print("______________________________________________________________________")
