@@ -18,7 +18,7 @@ except Exception as e:
 class mainApplication(QMainWindow):
     def __init__(self):
         super(mainApplication, self).__init__()
-        self.version = "1.3.0"
+        self.version = "1.3.1"
         self.WhitOpenFilePath = None
 
     def downloadUpdater(self):
@@ -69,7 +69,7 @@ update = input("Required to download 'update.py' self updater(recommended). If y
 print("_______________________________________________________________")
 
 Whiteboard = QApplication(sys.argv)
-QApplication.setApplicationName('CHN Whiteboard v1.3.0')
+QApplication.setApplicationName('CHN Whiteboard v1.3.1')
 app = mainApplication()
 
 updateAvailable = False
@@ -94,6 +94,7 @@ try:
     else:
         updateAvailable = True
         input()
+        exec(open("Update.py").read())
 except:
     print("Error check for updates[Self updater] : Error")
     print("_______________________________________________________________")
