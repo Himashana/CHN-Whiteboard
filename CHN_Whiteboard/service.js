@@ -1,1 +1,1 @@
-location.replace("stoped.html");
+//location.replace("stoped.html");
